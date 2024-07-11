@@ -1,0 +1,39 @@
+:root {
+  --max-width: 1200px;
+  --border-radius: 12px;
+  --primary-color-01: #f8efe4;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary-color-01: #f8efe4;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: var(--primary-color-01);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
