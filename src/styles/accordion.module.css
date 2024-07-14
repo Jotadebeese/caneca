@@ -1,0 +1,78 @@
+.accordion {
+  background: var(--secondary-02);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-md-2) var(--spacing-lg);
+  color: var(--primary-02);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+.accordion button:hover {
+  opacity: 1;
+}
+.trigger {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--primary-02);
+}
+.linesContainer {
+  position: relative;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.secondLine {
+  position: absolute;
+  rotate: 90deg;
+  left: 0;
+  transition: rotate 0.3s cubic-bezier(0.87, 0, 0.13, 1);
+}
+.flat {
+  rotate: 0deg;
+}
+.vanish {
+  opacity: 0;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.content {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.1s cubic-bezier(0.87, 0, 0.13, 1);
+}
+.content p {
+  margin: var(--spacing-md) 0;
+}
+.content ul {
+  padding-left: var(--spacing-lg);
+}
+.content li {
+  margin: var(--spacing-sm) 0;
+}
+.open {
+  max-height: 5000px;
+}
+@media (max-width: 700px) {
+  .accordion {
+    padding: var(--spacing-lg) 0;
+  }
+  .trigger {
+    padding: 0 var(--spacing-lg);
+  }
+  .content {
+    padding: 0 var(--spacing-lg);
+  }
+}

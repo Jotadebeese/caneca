@@ -8,6 +8,7 @@
   --spacing-xs: 5px;
   --spacing-sm: 10px;
   --spacing-md: 20px;
+  --spacing-md-2: 25px;
   --spacing-lg: 40px;
   --spacing-xl: 80px;
   /* Borders */
@@ -85,6 +86,11 @@ button {
   border: none;
   outline: none;
   transition: ease-in-out 0.3s;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  font-family: inherit;
+  color: var(--primary-02);
 }
 button:hover {
   opacity: 0.8;

@@ -41,7 +41,7 @@ export default function Camera() {
     <div className={style.videoContainer}>
       {!cameraOn && (
         <div onClick={handleIconClick} className={style.allowContainer}>
-          <Image src={webcamIcon} alt="camera" width={100} height={100} />
+          <Image src={webcamIcon} alt="camera" width={80} height={80} />
         </div>
       )}
       {cameraOn && (
