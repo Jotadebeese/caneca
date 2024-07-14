@@ -24,3 +24,14 @@
   border-radius: var(--border-radius-lg);
   pointer-events: none; /* Allow clicks to pass through to the video */
 }
+.allowContainer {
+  background: var(--secondary-02);
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}

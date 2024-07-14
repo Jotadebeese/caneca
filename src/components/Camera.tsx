@@ -1,50 +1,58 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import style from "@/src/styles/Camera.module.css";
+import Image from "next/image";
+import webcamIcon from "@/src/images/icons/webcam.svg";
 
 export default function Camera() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [cameraOn, setCameraOn] = useState(false);
 
+  const allowCamera = async () => {
+    try {
+      const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      if (videoRef.current) {
+        videoRef.current.srcObject = stream;
+        videoRef.current.play();
+      }
+      setCameraOn(true);
+    } catch (e) {
+      setCameraOn(false);
+      console.error("Error accessing the camera", e);
+      switch ((e as Error).name) {
+        case "NotAllowedError":
+          alert("You must allow access to the camera");
+          break;
+        case "NotFoundError":
+          alert("No camera found in this device");
+          break;
+        default:
+          alert("Error accessing the camera");
+      }
+    }
+  };
   useEffect(() => {
-    navigator.mediaDevices
-      .getUserMedia({ video: true })
-      .then((stream) => {
-        if (videoRef.current) {
-          videoRef.current.srcObject = stream;
-        }
-      })
-      .catch((e) => {
-        console.error("Error accessing the camera", e);
-        switch (e.name) {
-          case "NotAllowedError":
-            alert("You must allow access to the camera");
-            break;
-          case "NotFoundError":
-            alert("No camera found in this device");
-            break;
-          default:
-            alert("Error accessing the camera");
-        }
-      });
-  }, [cameraOn]);
+    allowCamera();
+  }, []);
   const handleIconClick = () => {
-    setCameraOn(!cameraOn);
+    allowCamera();
   };
   return (
     <div className={style.videoContainer}>
       {!cameraOn && (
-        <div onClick={handleIconClick}>
-          <span className={style.icon} role="img" aria-label="camera">
-            📷
-          </span>
-          <h1 className={style.heading}>Click to Use Camera</h1>
+        <div onClick={handleIconClick} className={style.allowContainer}>
+          <Image src={webcamIcon} alt="camera" width={100} height={100} />
         </div>
       )}
       {cameraOn && (
         <>
           <div className={style.overlay}></div>
-          <video ref={videoRef} className={style.video} autoPlay></video>
+          <video
+            ref={videoRef}
+            className={style.video}
+            autoPlay
+            playsInline
+          ></video>
         </>
       )}
     </div>

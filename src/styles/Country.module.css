@@ -1,0 +1,10 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--spacing-lg);
+  background: var(--secondary-02);
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius-lg);
+  gap: var(--spacing-md);
+}
