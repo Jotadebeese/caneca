@@ -102,3 +102,65 @@ button:hover {
     color-scheme: dark;
   }
 }
+/* -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=- */
+.carousel {
+  width: 100%;
+}
+/* Carousel Container */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding-top: 200px;
+}
+
+/* Carousel Progress Bar */
+.carousel-progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.progress {
+  height: 100%;
+  background-color: #007bff;
+  transition: width 0.5s ease-in-out;
+}
+
+/* Carousel Wrapper */
+.carousel-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+/* Carousel Item */
+.carousel-item {
+  box-sizing: border-box;
+  padding: 10px;
+  margin-left: 10px;
+  background-color: #b38383;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Carousel Buttons */
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.carousel-button.left {
+  left: 10px;
+}
+
+.carousel-button.right {
+  right: 10px;
+}
