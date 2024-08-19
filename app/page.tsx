@@ -31,14 +31,19 @@ export default function Home() {
         ),
     },
   ];
+
+  const handleImageCapture = (image: HTMLCanvasElement) => {
+    console.log(image);
+    console.log("Image captured");
+  };
   return (
     <main className={style.main}>
       <div className={style.innerContainer}>
         <div className={style.item1}>
-          <Camera />
+          <Camera onCapture={handleImageCapture} />
         </div>
         <div className={style.item2}>
-          <Actionable />
+          <Actionable onCapture={() => handleImageCapture} />
         </div>
         <div className={style.item3}>
           <Country country={country} setCountry={setCountry} />

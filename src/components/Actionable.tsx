@@ -3,7 +3,7 @@ import { TakeShot } from "./ui/buttons";
 import takeShot from "@/src/images/icons/takeShot.svg";
 import style from "@/src/styles/Actionable.module.css";
 
-export default function Actionable() {
+export default function Actionable({ onCapture }: { onCapture: () => void }) {
   return (
     <div className={style.main}>
       <div className={style.textContainer}>
@@ -13,7 +13,7 @@ export default function Actionable() {
           where to throw it base in the country selection.
         </p>
       </div>
-      <TakeShot>
+      <TakeShot onClick={onCapture}>
         <Image src={takeShot} width={60} alt="Polygon Icon" />
       </TakeShot>
     </div>

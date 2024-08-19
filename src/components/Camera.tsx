@@ -4,8 +4,13 @@ import style from "@/src/styles/Camera.module.css";
 import Image from "next/image";
 import webcamIcon from "@/src/images/icons/webcam.svg";
 
-export default function Camera() {
+export default function Camera({
+  onCapture,
+}: {
+  onCapture: (image: HTMLCanvasElement) => void;
+}) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
   const [cameraOn, setCameraOn] = useState(false);
 
   const allowCamera = async () => {
@@ -31,12 +36,28 @@ export default function Camera() {
       }
     }
   };
+
+  const captureImage = () => {
+    if (videoRef.current && canvasRef.current) {
+      const canvas = canvasRef.current;
+      const video = videoRef.current;
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      const context = canvas.getContext("2d");
+      if (context) {
+        context.drawImage(video, 0, 0, canvas.width, canvas.height);
+        onCapture(canvas);
+      }
+    }
+  };
+
   useEffect(() => {
     allowCamera();
   }, []);
   const handleIconClick = () => {
     allowCamera();
   };
+
   return (
     <div className={style.videoContainer}>
       {!cameraOn && (
@@ -44,6 +65,9 @@ export default function Camera() {
           <Image src={webcamIcon} alt="camera" width={80} height={80} />
         </div>
       )}
+      <button onClick={captureImage} className={style.captureButton}>
+        Capture
+      </button>
       {cameraOn && (
         <>
           <div className={style.overlay}></div>
@@ -53,6 +77,7 @@ export default function Camera() {
             autoPlay
             playsInline
           ></video>
+          <canvas ref={canvasRef} style={{ display: "none" }}></canvas>
         </>
       )}
     </div>
