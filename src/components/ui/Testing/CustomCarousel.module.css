@@ -1,0 +1,78 @@
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.3s ease;
+  transform: translateX(
+    calc(-100% * var(--current-index) / var(--items-to-show))
+  );
+}
+
+.carousel-item {
+  flex: 0 0 calc(100% / var(--items-to-show));
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-button.prev {
+  left: 10px;
+}
+
+.carousel-button.next {
+  right: 10px;
+}
+
+.carousel-progress {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+}
+
+.carousel-progress input {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    flex: 0 0 100%;
+    padding: 0;
+  }
+
+  .carousel::before,
+  .carousel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .carousel::before {
+    left: 0;
+    background: linear-gradient(to right, white, transparent);
+  }
+
+  .carousel::after {
+    right: 0;
+    background: linear-gradient(to left, white, transparent);
+  }
+}

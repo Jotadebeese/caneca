@@ -13,6 +13,7 @@ import {
 
 export default function Home() {
   const [country, setCountry] = useState("Australia");
+  const [action, setAction] = useState(null);
   const accordionItems = [
     {
       title:
@@ -34,6 +35,9 @@ export default function Home() {
 
   const handleImageCapture = (image: HTMLCanvasElement) => {
     console.log(image);
+    console.log("Image captured");
+  };
+  const captureImage = () => {
     console.log("Image captured");
   };
   return (

@@ -12,6 +12,7 @@ export default function Camera({
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [cameraOn, setCameraOn] = useState(false);
+  const [image, setImage] = useState(false);
 
   const allowCamera = async () => {
     try {
@@ -47,6 +48,7 @@ export default function Camera({
       if (context) {
         context.drawImage(video, 0, 0, canvas.width, canvas.height);
         onCapture(canvas);
+        setImage(true);
       }
     }
   };
@@ -65,9 +67,6 @@ export default function Camera({
           <Image src={webcamIcon} alt="camera" width={80} height={80} />
         </div>
       )}
-      <button onClick={captureImage} className={style.captureButton}>
-        Capture
-      </button>
       {cameraOn && (
         <>
           <div className={style.overlay}></div>
@@ -76,8 +75,13 @@ export default function Camera({
             className={style.video}
             autoPlay
             playsInline
+            style={image ? { display: "none" } : {}}
           ></video>
-          <canvas ref={canvasRef} style={{ display: "none" }}></canvas>
+          <canvas
+            className={style.video}
+            ref={canvasRef}
+            style={image ? { display: "block" } : { display: "none" }}
+          ></canvas>
         </>
       )}
     </div>

@@ -51,7 +51,6 @@
 .content {
   overflow: hidden;
   max-height: 0;
-  transition: max-height 0.1s cubic-bezier(0.87, 0, 0.13, 1);
 }
 .content p {
   margin: var(--spacing-md) 0;
@@ -64,6 +63,7 @@
 }
 .open {
   max-height: 5000px;
+  transition: max-height 1s cubic-bezier(0.87, 0, 0.13, 1);
 }
 @media (max-width: 700px) {
   .accordion {
