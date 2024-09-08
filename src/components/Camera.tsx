@@ -6,8 +6,10 @@ import webcamIcon from "@/src/images/icons/webcam.svg";
 
 export default function Camera({
   onCapture,
+  action,
 }: {
   onCapture: (image: HTMLCanvasElement) => void;
+  action: boolean;
 }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -49,10 +51,17 @@ export default function Camera({
         context.drawImage(video, 0, 0, canvas.width, canvas.height);
         onCapture(canvas);
         setImage(true);
+        console.log("Image captured", canvas);
       }
     }
   };
-
+  useEffect(() => {
+    if (action) {
+      captureImage();
+    } else {
+      setImage(false);
+    }
+  }, [action]);
   useEffect(() => {
     allowCamera();
   }, []);

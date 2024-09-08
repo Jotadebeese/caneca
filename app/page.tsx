@@ -13,7 +13,7 @@ import {
 
 export default function Home() {
   const [country, setCountry] = useState("Australia");
-  const [action, setAction] = useState(null);
+  const [action, setAction] = useState(false);
   const accordionItems = [
     {
       title:
@@ -37,17 +37,14 @@ export default function Home() {
     console.log(image);
     console.log("Image captured");
   };
-  const captureImage = () => {
-    console.log("Image captured");
-  };
   return (
     <main className={style.main}>
       <div className={style.innerContainer}>
         <div className={style.item1}>
-          <Camera onCapture={handleImageCapture} />
+          <Camera onCapture={handleImageCapture} action={action} />
         </div>
         <div className={style.item2}>
-          <Actionable onCapture={() => handleImageCapture} />
+          <Actionable onCapture={() => setAction(!action)} action={action} />
         </div>
         <div className={style.item3}>
           <Country country={country} setCountry={setCountry} />
