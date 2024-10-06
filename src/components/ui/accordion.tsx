@@ -1,5 +1,5 @@
 "use client";
-import styles from "@/src/styles/accordion.module.css";
+import styles from "./accordion.module.css";
 import Image from "next/image";
 import { useState } from "react";
 import firstLine from "@/src/images/icons/line.svg";

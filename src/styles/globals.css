@@ -27,18 +27,22 @@
   --font-light: 300;
   --font-regular: 400;
   --font-medium: 500;
+  --font-semibold: 600;
   --font-bold: 700;
   /* Colors */
   --primary-02: #292929;
-  --secondary-02: #ffffff;
+  --secondary-02: #fffefd;
   --primary: #f8efe4;
   --secondary: #c88585;
+  --utils-color: rgba(0, 0, 0, 0.25);
   --linear-gradient: linear-gradient(
     45deg,
     #ffffff 0%,
     #f8efe4 50%,
     #c88585 100%
   );
+  /* Inputs */
+  --input-padding: 10px 15px;
   --linear-gradient-02: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0) 0%,
@@ -105,7 +109,9 @@ h3,
 strong {
   font-weight: var(--font-medium);
 }
-
+small {
+  font-size: var(--font-small);
+}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

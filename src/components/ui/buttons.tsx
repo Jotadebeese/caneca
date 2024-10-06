@@ -1,4 +1,4 @@
-import style from "@/src/styles/buttons.module.css";
+import style from "./buttons.module.css";
 
 export function TakeShot({
   children,

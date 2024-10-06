@@ -1,0 +1,134 @@
+.innerContainer {
+  display: grid;
+  grid-template-rows: repeat(5, auto);
+  grid-template-columns: repeat(7, 1fr);
+  width: 100%;
+  gap: var(--spacing-md);
+  max-width: var(--max-width);
+}
+.item1 {
+  grid-area: 1 / 1 / 4 / 4;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+.item2 {
+  grid-area: 1 / 4 / 2 / 8;
+}
+.item3 {
+  grid-area: 2 / 4 / 4 / 8;
+}
+.item4 {
+  grid-area: 4 / 1 / 6 / 8;
+}
+
+@media (max-width: 900px) {
+  .innerContainer {
+    grid-template-rows: repeat(6, auto);
+    gap: var(--spacing-sm);
+  }
+  .item1 {
+    grid-area: 1 / 1 / 5 / 4;
+  }
+  .item2 {
+    grid-area: 3 / 4 / 5 / 8;
+  }
+  .item3 {
+    grid-area: 5 / 1 / 6 / 8;
+  }
+  .item4 {
+    grid-area: 6 / 1 / 7 / 8;
+  }
+}
+
+@media (max-width: 765px) {
+  .innerContainer {
+    grid-template-rows: repeat(7, auto);
+    gap: var(--spacing-sm);
+  }
+  .item1 {
+    grid-area: 1 / 1 / 6 / 8;
+  }
+  .item2 {
+    grid-area: 6 / 1 / 7 / 8;
+  }
+  .item3 {
+    grid-area: 7 / 1 / 8 / 8;
+  }
+  .item4 {
+    display: none;
+  }
+}
+
+.cameraAndPredictionOutContainer {
+  width: 100%;
+  height: 100%;
+  background: var(--secondary-02);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow);
+}
+.cameraAndPredictionContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  background: var(--secondary-02);
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-lg);
+}
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+.predictionTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableHeader {
+  border: 1px solid var(--utils-color);
+  padding: var(--spacing-sm);
+  color: var(--primary-02); /* Text color for headers */
+  text-align: center;
+  font-weight: var(--font-medium);
+  font-size: var(--font-body);
+}
+.tableCell {
+  border: 1px solid var(--utils-color);
+  padding: var(--spacing-sm);
+  text-align: center;
+}
+
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.loadingSpinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid var(--primary);
+  border-top: 5px solid var(--secondary);
+  border-radius: 50%;
+  animation: loading 1s linear infinite;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.error {
+  color: var(--secondary);
+  text-align: center;
+}

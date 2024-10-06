@@ -1,5 +1,5 @@
-import style from "@/src/styles/Country.module.css";
-import { CustomSelector } from "./ui/inputs";
+import style from "./Country.module.css";
+import { CustomSelector } from "../ui/inputs";
 import colombiaFlag from "@/src/images/colombian.svg";
 import thaiFlag from "@/src/images/thai.svg";
 import australianFlag from "@/src/images/australian.svg";

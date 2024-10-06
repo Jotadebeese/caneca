@@ -1,0 +1,78 @@
+.flagsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: -3px;
+}
+.flagsContainer input[type="radio"] {
+  display: none;
+}
+.unselected {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--secondary-02);
+  padding: var(--spacing-xxs);
+  border: 1px solid var(--secondary-02);
+  border-radius: 15px;
+  transition: ease-in-out 0.2s;
+}
+.selected {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--secondary-02);
+  padding: var(--spacing-xxs);
+  border: 1px solid var(--secondary);
+  border-radius: 12px;
+  transition: ease-in-out 0.2s;
+  box-shadow: var(--shadow);
+}
+.flag {
+  border-radius: var(--border-radius-lg);
+  object-fit: cover;
+}
+
+.dropDownSelectorContainer {
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: center;
+  background: var(--secondary-02);
+  padding-left: var(--spacing-sm);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow);
+}
+.dropDownSelectorContainer label {
+  width: fit-content;
+  text-wrap: nowrap;
+  font-size: var(--font-small);
+  color: var(--primary-02);
+  font-weight: var(--font-semibold);
+}
+.dropDownSelector {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background: var(--secondary-02);
+  padding: var(--input-padding);
+  border: none;
+  outline: none;
+
+  border-radius: var(--border-radius-lg);
+  color: var(--primary-02);
+  cursor: pointer;
+  font-size: var(--font-small);
+  width: 100%;
+  border: 1px solid var(--secondary-02);
+  border-left-color: var(--utils-color);
+  transition: all 0.2s ease-in-out;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.dropDownSelector:focus {
+  border: 1px solid var(--secondary);
+  transition: all 0.2s ease-in-out;
+}

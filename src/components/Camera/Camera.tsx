@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import style from "@/src/styles/Camera.module.css";
+import style from "./Camera.module.css";
 import Image from "next/image";
 import webcamIcon from "@/src/images/icons/webcam.svg";
 
@@ -51,7 +51,7 @@ export default function Camera({
         context.drawImage(video, 0, 0, canvas.width, canvas.height);
         onCapture(canvas);
         setImage(true);
-        console.log("Image captured", canvas);
+        console.log("Image captured");
       }
     }
   };

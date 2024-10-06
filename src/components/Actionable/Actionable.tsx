@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { TakeShot } from "./ui/buttons";
+import { TakeShot } from "../ui/buttons";
 import takeShot from "@/src/images/icons/takeShot.svg";
 import removeShot from "@/src/images/icons/removeShot.svg";
-import style from "@/src/styles/Actionable.module.css";
+import style from "./Actionable.module.css";
 
 export default function Actionable({
   onCapture,
