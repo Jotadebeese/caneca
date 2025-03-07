@@ -55,8 +55,7 @@
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-
-  background: var(--secondary-02);
+  background: none;
   padding: var(--input-padding);
   border: none;
   outline: none;
@@ -71,8 +70,30 @@
   transition: all 0.2s ease-in-out;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  position: relative;
 }
 .dropDownSelector:focus {
   border: 1px solid var(--secondary);
   transition: all 0.2s ease-in-out;
+}
+
+.selectContainer {
+  position: relative;
+  width: 100%;
+  background: var(--secondary-02);
+  border-radius: var(--border-radius-lg);
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  transition: transform 0.3s ease;
+}
+
+.rotateArrow {
+  transform: translateY(-50%) rotate(90deg);
 }
