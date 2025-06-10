@@ -33,8 +33,8 @@ export function CustomSelector({
             className={style.flag}
             src={option.image}
             alt={`${option.value} flag.`}
-            width={150}
-            height={100}
+            width={50}
+            height={50}
           />
         </label>
       ))}

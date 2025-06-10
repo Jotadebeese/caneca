@@ -1,9 +1,11 @@
-import path from "path";
-import fs from "fs";
+/* import path from "path";
+import fs from "fs"; */
+import { MODELS_CONFIG } from "../model-config";
 import { ModelOption } from "../types";
 
 export function listModelOptions(): ModelOption[] {
-  const modelsDir = path.join(process.cwd(), "public", "models", "ONNX_models");
+  return MODELS_CONFIG;
+  /* const modelsDir = path.join(process.cwd(), "public", "models", "ONNX_models");
 
   // Check if the directory exists
   if (!fs.existsSync(modelsDir)) {
@@ -59,5 +61,5 @@ export function listModelOptions(): ModelOption[] {
   const validModelOptions: ModelOption[] = modelOptions.filter(
     (option): option is ModelOption => option !== null
   );
-  return validModelOptions;
+  return validModelOptions; */
 }

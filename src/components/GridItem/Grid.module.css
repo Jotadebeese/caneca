@@ -43,7 +43,7 @@
 
 @media (max-width: 765px) {
   .innerContainer {
-    grid-template-rows: repeat(7, auto);
+    grid-template-rows: repeat(8, auto);
     gap: var(--spacing-sm);
   }
   .item1 {
@@ -56,7 +56,7 @@
     grid-area: 7 / 1 / 8 / 8;
   }
   .item4 {
-    display: none;
+    grid-area: 8 / 1 / 9 / 8;
   }
 }
 

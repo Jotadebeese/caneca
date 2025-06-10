@@ -8,7 +8,7 @@ export async function getSession(
   const model = MODEL_PATH.split("/").pop();
   if (!session) {
     session = await ort.InferenceSession.create(MODEL_PATH, {
-      executionProviders: ["webgl"],
+      executionProviders: ["webgl", "wasm"],
       graphOptimizationLevel: "all",
     });
     console.log("Inference Session created with", model);
