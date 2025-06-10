@@ -1,11 +1,12 @@
-import { Tensor } from "onnxruntime-web";
+//import { Tensor } from "onnxruntime-web";
+const { Tensor } = (window as any).ort;
 
 /**
  * Converts a canvas image to a preprocessed tensor suitable for the model.
  */
 export async function getImageTensorFromCanvas(
   canvas: HTMLCanvasElement
-): Promise<Tensor> {
+): Promise<any> {
   const context = canvas.getContext("2d");
   if (!context) {
     throw new Error("Cannot get canvas context");

@@ -21,6 +21,8 @@ export default function RootLayout({
     <html lang="en" className={dm_sans.className}>
       <body>
         {children}
+        <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.22.0/dist/ort.min.js"></script>
+
         <Footer />
       </body>
     </html>

@@ -1,4 +1,6 @@
-import { Tensor } from "onnxruntime-web";
+//import { Tensor } from "onnxruntime-web";
+//const { Tensor } = (window as any).ort;
+
 import { getSession } from "./modelHelper";
 
 // Applies softmax to an array of numbers
@@ -33,14 +35,14 @@ function topKClasses({
 
 // Run model inference on the provided tensor and returns the predicted classes
 export async function predict(
-  inputTensor: Tensor,
+  inputTensor: any,
   MODEL_PATH: string,
   classLabels: string[]
 ): Promise<{ predictions: any; inferenceTime: number }> {
   try {
     const session = await getSession(MODEL_PATH);
 
-    const feeds: Record<string, Tensor> = {
+    const feeds: Record<string, any> = {
       input: inputTensor,
     };
 
@@ -50,7 +52,7 @@ export async function predict(
     const end = performance.now();
     const inferenceTime = (end - start) / 1000;
 
-    const outputTensor = results.output as Tensor;
+    const outputTensor = results.output as any;
     const outputArray = Array.from(outputTensor.data as Float32Array);
 
     const probabilities = softmax(outputArray);
