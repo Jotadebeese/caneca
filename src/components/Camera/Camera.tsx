@@ -93,6 +93,9 @@ export default function Camera({
         // This button now ONLY sets the state.
         <div onClick={handleEnableCameraClick} className={style.allowContainer}>
           <Image src={webcamIcon} alt="camera" width={80} height={80} />
+          <small className={style.allowText}>
+            Click here to use the camera.
+          </small>
         </div>
       )}
 
