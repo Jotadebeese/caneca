@@ -104,18 +104,20 @@ export function AccordionTrigger({
       <h3>{title}</h3>
       <div className={styles.linesContainer}>
         <Image
-          className={open && index == itemIndex ? styles.vanish : ""}
+          className={`${
+            open && index == itemIndex ? styles.vanish : ""
+          } min-w-5`}
           src={firstLine}
           width={20}
           height={20}
           alt="First Line"
         />
         <Image
-          className={
+          className={`${
             open && index == itemIndex
               ? `${styles.secondLine} ${styles.flat}`
               : `${styles.secondLine}`
-          }
+          } min-w-5`}
           src={secondLine}
           width={20}
           height={20}

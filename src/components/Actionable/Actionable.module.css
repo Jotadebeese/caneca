@@ -2,6 +2,7 @@
   background: var(--secondary-02);
   box-shadow: var(--shadow);
   border-radius: var(--border-radius-lg);
+  height: 100%;
 }
 .main {
   display: flex;
@@ -11,6 +12,7 @@
   border-radius: var(--border-radius-lg);
   padding: var(--spacing-lg);
   gap: var(--spacing-md);
+  height: 100%;
 }
 .textContainer {
   display: flex;

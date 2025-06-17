@@ -27,6 +27,7 @@ export default function Actionable({
             width={60}
             height={60}
             alt="Polygon Icon"
+            className="min-w-14 min-h-14"
           />
         </TakeShot>
       </div>

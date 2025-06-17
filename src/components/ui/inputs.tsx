@@ -30,7 +30,7 @@ export function CustomSelector({
             onChange={() => onChange(option.value)}
           />
           <Image
-            className={style.flag}
+            className={`${style.flag} max-w-[50px] w-[50px] h-[50px] max-h-[50px] min-w[50px] min-h-[50px]`}
             src={option.image}
             alt={`${option.value} flag.`}
             width={50}

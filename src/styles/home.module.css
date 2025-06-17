@@ -1,6 +1,7 @@
 .main {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   padding: var(--spacing-lg);
   width: 100%;
   max-width: var(--max-width-b);

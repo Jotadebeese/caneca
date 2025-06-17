@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 :root {
   /* Sizes */
   --max-width-b: 1440px;
@@ -41,6 +43,7 @@
     #f8efe4 50%,
     #c88585 100%
   );
+
   /* Inputs */
   --input-padding: 10px 15px;
   --linear-gradient-02: linear-gradient(
@@ -50,7 +53,13 @@
   );
   --shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
 }
-
+@theme inline {
+  --color-primary: #f8efe4;
+  --color-secondary: #c88585;
+  --color-primary-02: #292929;
+  --color-secondary-02: #fffefd;
+  --color-utils-color: rgba(0, 0, 0, 0.25);
+}
 @media (prefers-color-scheme: dark) {
   :root {
     /* Colors */
