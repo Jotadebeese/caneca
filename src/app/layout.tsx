@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "@/src/styles/globals.css";
 import Footer from "../components/Footer/Footer";
+import { Analytics } from "@vercel/analytics/next";
 
 const dm_sans = DM_Sans({
   subsets: ["latin"],
@@ -22,7 +23,7 @@ export default function RootLayout({
       <body>
         {children}
         <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.22.0/dist/ort.min.js"></script>
-
+        <Analytics />
         <Footer />
       </body>
     </html>
